@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O Diário do João | Portfólio de João B. Matos</title>
+
+  <!-- Fontes do Google Fonts:
+       UnifrakturMaguntia = letra gótica do nome do jornal
+       Playfair Display   = títulos das notícias
+       Lora               = textos
+       Oswald             = etiquetas e menu -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lora:ital,wght@0,400;0,600;1,400&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== BARRA DE CIMA (data e ferramentas) ===== -->
+  <div class="barra-topo">
+    <div class="container barra-topo-conteudo">
+      <!-- a data de hoje é escrita aqui pelo JavaScript -->
+      <p id="data-hoje" class="data-hoje">Brasília - DF</p>
+
+      <div class="ferramentas">
+        <span class="ferramentas-rotulo">Tamanho da letra:</span>
+        <button id="diminuir-letra" class="botao-ferramenta" title="Diminuir a letra">A-</button>
+        <button id="aumentar-letra" class="botao-ferramenta" title="Aumentar a letra">A+</button>
+        <button id="imprimir" class="botao-ferramenta" title="Imprimir a página">Imprimir edição</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CABEÇALHO DO JORNAL ===== -->
+  <header id="capa" class="cabecalho">
+    <div class="container">
+      <div class="cabecalho-info">
+        <span>Edição nº 01</span>
+        <span>Portfólio pessoal</span>
+        <span>Preço: grátis</span>
+      </div>
+
+      <a href="#capa" class="nome-jornal">O Diário do João</a>
+
+      <p class="slogan">Notícias, projetos e novidades de um estudante de Sistemas de Informação</p>
+    </div>
+
+    <!-- menu com os "cadernos" do jornal -->
+    <nav class="cadernos">
+      <div class="container">
+        <button id="botao-menu" class="botao-menu">☰ Cadernos</button>
+
+        <ul id="menu" class="menu">
+          <li><a href="#manchete">Capa</a></li>
+          <li><a href="#entrevista">Entrevista</a></li>
+          <li><a href="#trajetoria">Trajetória</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#lazer">Lazer</a></li>
+          <li><a href="#classificados">Classificados</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- ===== MANCHETE (início) ===== -->
+    <section id="manchete" class="manchete">
+
+      <article class="materia-principal">
+        <p class="chapeu">Exclusivo · Educação e Tecnologia</p>
+
+        <h1>Estudante da UDF troca a curiosidade pelo código e mira uma carreira em tecnologia</h1>
+
+        <p class="linha-fina">João B. Matos divide a rotina entre a faculdade, o trabalho e os primeiros projetos de programação, e garante que está só começando.</p>
+
+        <p class="assinatura">Por <strong>Redação do Diário</strong> · Brasília - DF</p>
+
+        <!-- foto do João no meio de um fundo pontilhado, como foto impressa em jornal -->
+        <figure class="figura">
+          <div class="moldura-foto">
+            <img src="imagens/joao.jpg" alt="Foto de João B. Matos, de perfil" class="foto">
+          </div>
+          <figcaption>João B. Matos, estudante de Sistemas de Informação na UDF, em foto de perfil (no sentido literal). <em>Foto: arquivo pessoal.</em></figcaption>
+        </figure>
+
+        <div class="colunas">
+          <p class="capitular">Quem conversa com João B. Matos percebe logo que a curiosidade vem antes de tudo. Estudante de Sistemas de Informação na UDF, em Brasília, ele conta que sempre quis entender o que acontece "por trás da tela", e foi esse interesse que o levou para a área de tecnologia.</p>
+
+          <p>Proativo e comunicativo, João concilia os estudos com um trabalho de atendimento ao público e atividades administrativas, enquanto procura a primeira oportunidade na área. "Lidar com gente todo dia me ensinou a ouvir e a explicar as coisas com calma. Isso ajuda muito na hora de programar para alguém", afirma.</p>
+
+          <p>Na faculdade, já participou de projetos em grupo, como um sistema pensado para deixar os serviços bancários mais acessíveis, e de atividades práticas com Git e GitHub. Fora da sala de aula, tem estudado Inteligência Artificial e automação de tarefas.</p>
+
+          <p>Nas próximas páginas, o leitor confere a entrevista completa, a trajetória, as habilidades e os projetos do estudante.</p>
+        </div>
+      </article>
+
+      <!-- coluna do lado direito da capa -->
+      <aside class="lateral">
+        <div class="box">
+          <h2 class="box-titulo">Ficha técnica</h2>
+          <dl class="ficha">
+            <dt>Nome</dt>
+            <dd>João B. Matos</dd>
+
+            <dt>Curso</dt>
+            <dd>Sistemas de Informação</dd>
+
+            <dt>Faculdade</dt>
+            <dd>UDF</dd>
+
+            <dt>Cidade</dt>
+            <dd>Brasília - DF</dd>
+
+            <dt>Interesses</dt>
+            <dd>IA, automação e acessibilidade</dd>
+
+            <dt>Situação</dt>
+            <dd>Em busca de estágio</dd>
+          </dl>
+        </div>
+
+        <div class="box box-tempo">
+          <h2 class="box-titulo">Previsão do tempo</h2>
+          <p class="tempo-icone">☀</p>
+          <p class="tempo-texto"><strong>Carreira:</strong> céu limpo, com 100% de chance de aprendizado e pancadas isoladas de código ao longo do dia.</p>
+        </div>
+
+        <div class="box box-escuro">
+          <h2 class="box-titulo">Nesta edição</h2>
+          <ol class="indice">
+            <li><a href="#entrevista">5 perguntas para João</a></li>
+            <li><a href="#trajetoria">A trajetória até aqui</a></li>
+            <li><a href="#habilidades">Bolsa de habilidades</a></li>
+            <li><a href="#projetos">Reportagens: os projetos</a></li>
+            <li><a href="#classificados">Classificados</a></li>
+          </ol>
+        </div>
+      </aside>
+
+    </section>
+
+    <!-- ===== ENTREVISTA (sobre mim) ===== -->
+    <section id="entrevista" class="secao">
+      <h2 class="titulo-secao"><span>Entrevista</span></h2>
+
+      <div class="entrevista">
+        <div class="perguntas">
+          <h3 class="titulo-materia">"Gosto de aprender fazendo": 5 perguntas para João B. Matos</h3>
+
+          <div class="pergunta">
+            <p class="pergunta-texto">Quem é o João?</p>
+            <p>Sou estudante de Sistemas de Informação na UDF. Me considero uma pessoa proativa, comunicativa, organizada e prestativa. Gosto de ajudar as pessoas e de entender como as coisas funcionam.</p>
+          </div>
+
+          <div class="pergunta">
+            <p class="pergunta-texto">Por que Sistemas de Informação?</p>
+            <p>Porque o curso junta duas coisas de que eu gosto: tecnologia e resolver problemas do dia a dia. Dá para criar um sistema que facilita a vida de uma empresa ou de uma pessoa, e isso me motiva.</p>
+          </div>
+
+          <div class="pergunta">
+            <p class="pergunta-texto">O que você faz hoje, além de estudar?</p>
+            <p>Trabalho com atendimento ao público e atividades administrativas, enquanto busco uma vaga na área de tecnologia. Essa experiência me deixou mais organizado e me ensinou a me comunicar melhor.</p>
+          </div>
+
+          <div class="pergunta">
+            <p class="pergunta-texto">O que mais chama sua atenção na tecnologia?</p>
+            <p>Inteligência Artificial e automação. Acho incrível ver uma tarefa repetitiva sendo feita sozinha por um sistema. Também me interesso por acessibilidade, porque a tecnologia precisa funcionar para todo mundo.</p>
+          </div>
+
+          <div class="pergunta">
+            <p class="pergunta-texto">Onde você quer chegar?</p>
+            <p>Quero conseguir meu primeiro estágio, continuar aprendendo e, no futuro, trabalhar com desenvolvimento de sistemas que ajudem as pessoas de verdade.</p>
+          </div>
+        </div>
+
+        <!-- frase em destaque -->
+        <blockquote class="citacao">
+          <p>Pego um problema, estudo e coloco a mão no código até funcionar.</p>
+          <cite>João B. Matos</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ===== TRAJETÓRIA ===== -->
+    <section id="trajetoria" class="secao">
+      <h2 class="titulo-secao"><span>Trajetória</span></h2>
+
+      <h3 class="titulo-materia">A trajetória até aqui</h3>
+
+      <ol class="cronologia">
+        <li class="evento">
+          <span class="evento-status">Em andamento</span>
+          <h4>Sistemas de Informação</h4>
+          <p>UDF, Centro Universitário do Distrito Federal, em Brasília.</p>
+        </li>
+
+        <li class="evento">
+          <span class="evento-status">Trabalho atual</span>
+          <h4>Atendimento e rotinas administrativas</h4>
+          <p>Atendimento ao público, organização de documentos e apoio à equipe.</p>
+        </li>
+
+        <li class="evento">
+          <span class="evento-status">Estudos</span>
+          <h4>Engenharia de Prompt e Aplicações de IA</h4>
+          <p>Atividades práticas sobre como usar a IA generativa em projetos reais.</p>
+        </li>
+
+        <li class="evento">
+          <span class="evento-status">Concluído</span>
+          <h4>Ensino Médio</h4>
+          <p>Base para a entrada na faculdade.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===== HABILIDADES ===== -->
+    <section id="habilidades" class="secao">
+      <h2 class="titulo-secao"><span>Habilidades</span></h2>
+
+      <div class="habilidades">
+        <div>
+          <h3 class="titulo-materia">Bolsa de habilidades: as cotações de hoje</h3>
+          <p class="descricao-tabela">Como no caderno de economia, cada habilidade tem a sua "cotação". A boa notícia: todas estão subindo.</p>
+
+          <!-- tabela no estilo da bolsa de valores -->
+          <table class="tabela-bolsa">
+            <thead>
+              <tr>
+                <th>Habilidade</th>
+                <th>Setor</th>
+                <th>Tendência</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Lógica de programação</td>
+                <td>Código</td>
+                <td class="alta">▲ em alta</td>
+              </tr>
+              <tr>
+                <td>HTML e CSS</td>
+                <td>Código</td>
+                <td class="alta">▲ em alta</td>
+              </tr>
+              <tr>
+                <td>JavaScript</td>
+                <td>Código</td>
+                <td class="alta">▲ subindo</td>
+              </tr>
+              <tr>
+                <td>Python</td>
+                <td>Código</td>
+                <td class="alta">▲ subindo</td>
+              </tr>
+              <tr>
+                <td>SQL</td>
+                <td>Código</td>
+                <td class="estavel">► estável</td>
+              </tr>
+              <tr>
+                <td>Git e GitHub</td>
+                <td>Ferramentas</td>
+                <td class="alta">▲ em alta</td>
+              </tr>
+              <tr>
+                <td>Google Workspace</td>
+                <td>Ferramentas</td>
+                <td class="alta">▲ em alta</td>
+              </tr>
+              <tr>
+                <td>IA generativa</td>
+                <td>Ferramentas</td>
+                <td class="alta">▲ subindo</td>
+              </tr>
+              <tr>
+                <td>Comunicação</td>
+                <td>Pessoal</td>
+                <td class="alta">▲ em alta</td>
+              </tr>
+              <tr>
+                <td>Trabalho em equipe</td>
+                <td>Pessoal</td>
+                <td class="alta">▲ em alta</td>
+              </tr>
+              <tr>
+                <td>Organização</td>
+                <td>Pessoal</td>
+                <td class="estavel">► estável</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- caixa com frases sobre programação (o JavaScript troca a frase) -->
+        <aside class="box box-frase">
+          <h3 class="box-titulo">Frase do dia</h3>
+          <p id="frase-texto" class="frase-texto">"Primeiro, resolva o problema. Depois, escreva o código."</p>
+          <p id="frase-autor" class="frase-autor">John Johnson</p>
+          <button id="botao-frase" class="botao">Ler outra frase</button>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== PROJETOS ===== -->
+    <section id="projetos" class="secao">
+      <h2 class="titulo-secao"><span>Projetos</span></h2>
+
+      <!-- projeto em destaque -->
+      <article class="reportagem-destaque">
+        <div>
+          <p class="chapeu">Faculdade · Projeto em grupo</p>
+          <h3>Sistema quer tornar os serviços bancários acessíveis para todos</h3>
+        </div>
+        <div>
+          <p>Desenvolvido em grupo na faculdade, o sistema foi pensado para facilitar o uso dos serviços bancários por pessoas com diferentes necessidades. Para João, o projeto mostrou na prática que um bom sistema começa por entender quem vai usá-lo.</p>
+          <p class="tecnologias">Acessibilidade · Planejamento de sistemas · Trabalho em equipe</p>
+        </div>
+      </article>
+
+      <!-- outros projetos, um ao lado do outro -->
+      <div class="reportagens">
+        <article class="reportagem">
+          <p class="chapeu">Pessoal</p>
+          <h3>Portfólio vira jornal</h3>
+          <p>Este site, feito do zero e inspirado nas capas de jornal impresso, para apresentar quem é o João e o que ele já fez.</p>
+          <p class="tecnologias">HTML · CSS · JavaScript</p>
+        </article>
+
+        <article class="reportagem">
+          <p class="chapeu">Faculdade</p>
+          <h3>Desafio colaborativo de Git</h3>
+          <p>Atividade em dupla para praticar branches, Pull Requests, revisão de código e resolução de conflitos no GitHub.</p>
+          <p class="tecnologias">Git · GitHub</p>
+        </article>
+
+        <article class="reportagem">
+          <p class="chapeu">Estudos · Em andamento</p>
+          <h3>Primeiros passos na automação</h3>
+          <p>Testes com planilhas e ferramentas de IA para automatizar tarefas repetitivas, como organizar dados e montar relatórios.</p>
+          <p class="tecnologias">Google Sheets · IA</p>
+        </article>
+      </div>
+
+      <p class="aviso">Continua na próxima edição: novos projetos vão aparecer aqui ao longo do curso.</p>
+    </section>
+
+    <!-- ===== LAZER (hobbies) ===== -->
+    <section id="lazer" class="secao">
+      <h2 class="titulo-secao"><span>Esportes e lazer</span></h2>
+
+      <h3 class="titulo-materia">Fora da faculdade, o placar é outro</h3>
+
+      <ul class="lazer">
+        <li>
+          <span class="lazer-icone">⚽</span>
+          <h4>Futebol</h4>
+          <p>A pelada com os amigos é sagrada no fim de semana.</p>
+        </li>
+        <li>
+          <span class="lazer-icone">🏋️</span>
+          <h4>Academia</h4>
+          <p>Para cuidar da saúde e desligar um pouco da tela.</p>
+        </li>
+        <li>
+          <span class="lazer-icone">🎧</span>
+          <h4>Música</h4>
+          <p>Trilha sonora para estudar e programar.</p>
+        </li>
+        <li>
+          <span class="lazer-icone">🎮</span>
+          <h4>Videogame</h4>
+          <p>Onde começou a curiosidade por tecnologia.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== CLASSIFICADOS (contato) ===== -->
+    <section id="classificados" class="secao">
+      <h2 class="titulo-secao"><span>Classificados</span></h2>
+
+      <div class="classificados">
+        <div class="anuncio anuncio-grande">
+          <h3 class="anuncio-titulo">Procura-se</h3>
+          <p><strong>Vaga de estágio na área de tecnologia.</strong> Estudante de Sistemas de Informação, proativo, comunicativo e com muita vontade de aprender. Disponível para começar o quanto antes.</p>
+          <p class="tratar">Tratar com João B. Matos.</p>
+        </div>
+
+        <div class="anuncio">
+          <h3 class="anuncio-titulo">Oferece-se</h3>
+          <p>Ajuda em trabalhos em grupo, organização de projetos e boa vontade para resolver problemas.</p>
+        </div>
+
+        <div class="anuncio">
+          <h3 class="anuncio-titulo">Troca-se</h3>
+          <p>Um café por uma boa conversa sobre tecnologia, IA ou futebol.</p>
+        </div>
+
+        <!-- "mailto:" abre o programa de e-mail; target="_blank" abre o GitHub em outra aba -->
+        <div class="anuncio anuncio-contato">
+          <h3 class="anuncio-titulo">Contato</h3>
+          <ul class="lista-contato">
+            <li><span>E-mail:</span> <a href="mailto:joaobgmatos@outlook.com">joaobgmatos@outlook.com</a></li>
+            <li><span>GitHub:</span> <a href="https://github.com/JoaoBGMatos" target="_blank">github.com/JoaoBGMatos</a></li>
+            <li><span>Local:</span> Brasília - DF</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== RODAPÉ (expediente do jornal) ===== -->
+  <footer class="rodape">
+    <div class="container">
+      <p class="rodape-nome">O Diário do João</p>
+      <p><strong>Expediente:</strong> direção, redação e programação por João B. Matos. Impresso em HTML, CSS e JavaScript.</p>
+      <p>&copy; <span id="ano"></span> · Todos os direitos reservados · <a href="#capa">↑ Voltar para a capa</a></p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

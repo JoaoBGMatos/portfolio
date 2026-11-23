@@ -1,0 +1,1070 @@
+/* ==========================================
+   PORTFÓLIO - JOÃO B. MATOS
+   Estilo "jornal impresso": papel, tinta
+   preta, letras com serifa e linhas finas
+   separando as colunas.
+   ========================================== */
+
+
+/* ---------- 1. CORES ---------- */
+:root {
+  --papel: #efede7;         /* fundo, cor de papel de jornal */
+  --papel-escuro: #e3e0d8;  /* caixas um pouco mais escuras */
+  --tinta: #171614;         /* quase preto, cor do texto */
+  --cinza: #55524c;         /* textos secundários */
+  --linha-fina: #b9b5ab;    /* linhas finas entre colunas */
+  --vermelho: #b3121b;      /* cor de destaque */
+  --verde: #1d6b3c;         /* usado só na tabela da "bolsa" */
+}
+
+
+/* ---------- 2. CONFIGURAÇÕES GERAIS ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* o JavaScript muda esse tamanho nos botões A- e A+ */
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Lora", Georgia, serif;
+  color: var(--tinta);
+  background-color: var(--papel);
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* cor do texto quando a pessoa seleciona com o mouse */
+::selection {
+  background-color: var(--vermelho);
+  color: var(--papel);
+}
+
+/* contorno visível quando a pessoa navega com o teclado (tecla Tab) */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--vermelho);
+  outline-offset: 3px;
+}
+
+.container {
+  width: 92%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* faz a seção não ficar escondida atrás do menu fixo ao clicar no link */
+section {
+  scroll-margin-top: 4rem;
+}
+
+
+/* ---------- 3. BARRA DE CIMA ---------- */
+.barra-topo {
+  background-color: var(--tinta);
+  color: var(--papel);
+  font-family: "Oswald", Arial, sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.barra-topo-conteudo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.45rem 0;
+  gap: 1rem;
+}
+
+.ferramentas {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.botao-ferramenta {
+  font-family: "Oswald", Arial, sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--papel);
+  background-color: transparent;
+  border: 1px solid var(--papel);
+  padding: 0.15rem 0.6rem;
+  cursor: pointer;
+}
+
+.botao-ferramenta:hover {
+  background-color: var(--papel);
+  color: var(--tinta);
+}
+
+
+/* ---------- 4. CABEÇALHO DO JORNAL ---------- */
+.cabecalho {
+  text-align: center;
+  padding-top: 1.25rem;
+}
+
+.cabecalho-info {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--tinta);
+  border-bottom: 1px solid var(--tinta);
+  padding: 0.3rem 0;
+  font-family: "Oswald", Arial, sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* nome do jornal com letra gótica */
+.nome-jornal {
+  display: block;
+  font-family: "UnifrakturMaguntia", "Times New Roman", serif;
+  font-size: clamp(3rem, 9vw, 6.5rem);
+  line-height: 1.15;
+  text-decoration: none;
+  margin: 0.6rem 0 0.2rem;
+}
+
+.slogan {
+  font-style: italic;
+  color: var(--cinza);
+  padding-bottom: 1rem;
+}
+
+/* menu com os "cadernos" - fica grudado no topo ao rolar */
+.cadernos {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--papel);
+  border-top: 4px double var(--tinta);
+  border-bottom: 1px solid var(--tinta);
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.menu li {
+  border-right: 1px solid var(--linha-fina);
+}
+
+.menu li:last-child {
+  border-right: none;
+}
+
+.menu a {
+  display: block;
+  padding: 0.6rem 1.1rem;
+  font-family: "Oswald", Arial, sans-serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: var(--vermelho);
+}
+
+/* botão do menu só aparece no celular */
+.botao-menu {
+  display: none;
+}
+
+
+/* ---------- 5. MANCHETE (início) ---------- */
+.manchete {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2.5rem;
+  padding: 2rem 0 2.5rem;
+  border-bottom: 3px solid var(--tinta);
+}
+
+/* "chapéu" é o nome da pequena etiqueta acima do título da notícia */
+.chapeu {
+  font-family: "Oswald", Arial, sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--vermelho);
+  margin-bottom: 0.5rem;
+}
+
+.manchete h1 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  line-height: 1.08;
+  margin-bottom: 1rem;
+}
+
+/* "linha fina" é o resumo que fica logo abaixo do título */
+.linha-fina {
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.4;
+  color: var(--cinza);
+}
+
+.assinatura {
+  font-family: "Oswald", Arial, sans-serif;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-top: 1px solid var(--linha-fina);
+  border-bottom: 1px solid var(--linha-fina);
+  padding: 0.4rem 0;
+  margin: 1.25rem 0 1.5rem;
+}
+
+.figura {
+  margin-bottom: 1.5rem;
+}
+
+/* fundo com pontinhos imitando a impressão do jornal, com a foto no meio */
+.moldura-foto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 380px;
+  padding: 1.25rem;
+  background-color: #d6d2c8;
+  background-image: radial-gradient(circle, rgba(23, 22, 20, 0.5) 1.2px, transparent 1.6px);
+  background-size: 7px 7px;
+  border: 1px solid var(--tinta);
+}
+
+/* a foto é quadrada e fica em preto e branco, como no jornal impresso */
+.foto {
+  display: block;
+  height: 100%;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 4px solid var(--papel);
+  outline: 1px solid var(--tinta);
+  filter: grayscale(100%) contrast(1.1);
+  transition: filter 0.4s;
+}
+
+/* ao passar o mouse, a foto ganha cor */
+.foto:hover {
+  filter: none;
+}
+
+figcaption {
+  font-size: 0.85rem;
+  color: var(--cinza);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--linha-fina);
+}
+
+/* texto dividido em duas colunas, igual jornal */
+.colunas {
+  column-count: 2;
+  column-gap: 2rem;
+  column-rule: 1px solid var(--linha-fina);
+  text-align: justify;
+  hyphens: auto;
+}
+
+.colunas p {
+  margin-bottom: 1rem;
+}
+
+/* primeira letra grande no começo do texto */
+.capitular::first-letter {
+  float: left;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 900;
+  font-size: 4.4rem;
+  line-height: 0.85;
+  color: var(--vermelho);
+  padding: 0.3rem 0.5rem 0 0;
+}
+
+/* coluna do lado direito da capa */
+.lateral {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-left: 1px solid var(--tinta);
+  padding-left: 2rem;
+}
+
+.box {
+  border-top: 3px solid var(--tinta);
+  padding-top: 0.75rem;
+}
+
+.box-titulo {
+  font-family: "Oswald", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+
+.ficha dt {
+  font-family: "Oswald", Arial, sans-serif;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cinza);
+}
+
+.ficha dd {
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px dotted var(--linha-fina);
+}
+
+.tempo-icone {
+  font-size: 2.5rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.tempo-texto {
+  font-size: 0.92rem;
+}
+
+.box-escuro {
+  background-color: var(--tinta);
+  color: var(--papel);
+  border-top: none;
+  padding: 1.1rem 1.25rem;
+}
+
+.indice {
+  list-style: decimal inside;
+  font-size: 0.92rem;
+}
+
+.indice li {
+  padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(239, 237, 231, 0.2);
+}
+
+.indice li:last-child {
+  border-bottom: none;
+}
+
+.indice a {
+  text-decoration: none;
+}
+
+.indice a:hover {
+  text-decoration: underline;
+}
+
+
+/* ---------- 6. SEÇÕES E TÍTULOS ---------- */
+.secao {
+  padding: 3rem 0;
+  border-bottom: 3px solid var(--tinta);
+}
+
+/* a última seção não precisa de linha, o rodapé já separa */
+.secao:last-child {
+  border-bottom: none;
+}
+
+/* nome do caderno com linhas duplas dos dois lados */
+.titulo-secao {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  font-family: "Oswald", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.titulo-secao::before,
+.titulo-secao::after {
+  content: "";
+  flex: 1;
+  border-top: 4px double var(--tinta);
+}
+
+.titulo-secao span {
+  background-color: var(--tinta);
+  color: var(--papel);
+  padding: 0.25rem 1rem;
+}
+
+/* título de cada matéria */
+.titulo-materia {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  line-height: 1.15;
+  max-width: 820px;
+  margin-bottom: 1.75rem;
+}
+
+
+/* ---------- 7. ENTREVISTA ---------- */
+.entrevista {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.pergunta {
+  margin-bottom: 1.4rem;
+}
+
+/* a pergunta vem com um "P." vermelho antes */
+.pergunta-texto {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.pergunta-texto::before {
+  content: "P. ";
+  color: var(--vermelho);
+}
+
+/* frase em destaque, fica parada enquanto a pessoa rola a entrevista */
+.citacao {
+  position: sticky;
+  top: 5rem;
+  border-top: 4px solid var(--vermelho);
+  border-bottom: 1px solid var(--tinta);
+  padding: 1.5rem 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 1.3;
+}
+
+.citacao::before {
+  content: "“";
+  display: block;
+  font-size: 5rem;
+  line-height: 0.6;
+  color: var(--vermelho);
+  margin-top: 1rem;
+}
+
+.citacao cite {
+  display: block;
+  margin-top: 1rem;
+  font-family: "Oswald", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.citacao cite::before {
+  content: "— ";
+}
+
+
+/* ---------- 8. TRAJETÓRIA ---------- */
+/* linha do tempo na horizontal, com uma bolinha em cada etapa */
+.cronologia {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 3px solid var(--tinta);
+  padding-top: 1.75rem;
+}
+
+.evento {
+  position: relative;
+  padding: 0 1.25rem;
+  border-left: 1px solid var(--linha-fina);
+}
+
+.evento:first-child {
+  padding-left: 0;
+  border-left: none;
+}
+
+.evento::before {
+  content: "";
+  position: absolute;
+  top: -2.3rem;
+  left: 1.25rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--vermelho);
+  border: 3px solid var(--papel);
+}
+
+.evento:first-child::before {
+  left: 0;
+}
+
+.evento-status {
+  font-family: "Oswald", Arial, sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--vermelho);
+}
+
+.evento h4 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.evento p {
+  font-size: 0.95rem;
+  color: var(--cinza);
+}
+
+
+/* ---------- 9. HABILIDADES ---------- */
+.habilidades {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.descricao-tabela {
+  font-style: italic;
+  color: var(--cinza);
+  margin: -0.75rem 0 1.25rem;
+}
+
+.tabela-bolsa {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.tabela-bolsa th {
+  font-family: "Oswald", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: left;
+  padding: 0.5rem;
+  border-bottom: 2px solid var(--tinta);
+}
+
+.tabela-bolsa td {
+  padding: 0.55rem 0.5rem;
+  border-bottom: 1px dotted var(--linha-fina);
+}
+
+/* segunda coluna (setor) mais discreta */
+.tabela-bolsa td:nth-child(2) {
+  font-family: "Oswald", Arial, sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--cinza);
+}
+
+.tabela-bolsa tbody tr:hover {
+  background-color: var(--papel-escuro);
+}
+
+/* white-space: nowrap impede que "▲ subindo" quebre em duas linhas */
+.alta {
+  color: var(--verde);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.estavel {
+  color: var(--cinza);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* caixa da frase do dia */
+.box-frase {
+  position: sticky;
+  top: 5rem;
+  background-color: var(--papel-escuro);
+  border: 1px solid var(--tinta);
+  border-top: 4px solid var(--tinta);
+  padding: 1.5rem;
+}
+
+.frase-texto {
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: 1.35rem;
+  line-height: 1.35;
+}
+
+.frase-autor {
+  font-family: "Oswald", Arial, sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cinza);
+  margin: 0.75rem 0 1.25rem;
+}
+
+.frase-autor::before {
+  content: "— ";
+}
+
+/* botão padrão do site */
+.botao {
+  font-family: "Oswald", Arial, sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--papel);
+  background-color: var(--tinta);
+  border: none;
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.botao:hover {
+  background-color: var(--vermelho);
+}
+
+
+/* ---------- 10. PROJETOS ---------- */
+/* reportagem principal, com o título de um lado e o texto do outro */
+.reportagem-destaque {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--tinta);
+}
+
+.reportagem-destaque h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 900;
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  line-height: 1.1;
+}
+
+.reportagem-destaque p {
+  font-size: 1.05rem;
+}
+
+/* as outras reportagens, lado a lado, separadas por linhas finas */
+.reportagens {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.reportagem {
+  padding: 0 1.5rem;
+  border-left: 1px solid var(--linha-fina);
+}
+
+.reportagem:first-child {
+  padding-left: 0;
+  border-left: none;
+}
+
+.reportagem:last-child {
+  padding-right: 0;
+}
+
+.reportagem h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  margin-bottom: 0.6rem;
+  transition: color 0.2s;
+}
+
+.reportagem:hover h3 {
+  color: var(--vermelho);
+}
+
+.reportagem p {
+  font-size: 0.95rem;
+}
+
+/* linha com as tecnologias usadas em cada projeto */
+.reportagem-destaque .tecnologias,
+.reportagem .tecnologias {
+  font-family: "Oswald", Arial, sans-serif;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cinza);
+  border-top: 1px dotted var(--linha-fina);
+  padding-top: 0.5rem;
+  margin-top: 0.9rem;
+}
+
+.aviso {
+  text-align: center;
+  font-style: italic;
+  color: var(--cinza);
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--linha-fina);
+}
+
+
+/* ---------- 11. LAZER ---------- */
+.lazer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.lazer li {
+  border: 1px solid var(--tinta);
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* os emojis ficam em preto e branco, como numa foto de jornal */
+.lazer-icone {
+  display: block;
+  font-size: 2.4rem;
+  filter: grayscale(100%);
+  margin-bottom: 0.5rem;
+  transition: filter 0.2s;
+}
+
+.lazer h4 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.25rem;
+  margin-bottom: 0.3rem;
+}
+
+.lazer p {
+  font-size: 0.9rem;
+}
+
+/* ao passar o mouse, a caixa inverte as cores e o emoji ganha cor */
+.lazer li:hover {
+  background-color: var(--tinta);
+  color: var(--papel);
+}
+
+.lazer li:hover .lazer-icone {
+  filter: none;
+}
+
+
+/* ---------- 12. CLASSIFICADOS (contato) ---------- */
+.classificados {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.anuncio {
+  border: 1px solid var(--tinta);
+  padding: 1.1rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+/* anúncios que ocupam duas colunas */
+.anuncio-grande,
+.anuncio-contato {
+  grid-column: span 2;
+}
+
+.anuncio-grande {
+  border: 3px solid var(--tinta);
+}
+
+.anuncio-grande p {
+  font-size: 1.05rem;
+}
+
+.anuncio-titulo {
+  display: inline-block;
+  font-family: "Oswald", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  background-color: var(--tinta);
+  color: var(--papel);
+  padding: 0.1rem 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.anuncio-grande .anuncio-titulo {
+  background-color: var(--vermelho);
+}
+
+.tratar {
+  font-family: "Oswald", Arial, sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.75rem;
+}
+
+.lista-contato li {
+  padding: 0.35rem 0;
+  border-bottom: 1px dotted var(--linha-fina);
+}
+
+.lista-contato li:last-child {
+  border-bottom: none;
+}
+
+.lista-contato span {
+  display: inline-block;
+  width: 4.5rem;
+  font-family: "Oswald", Arial, sans-serif;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cinza);
+}
+
+.lista-contato a:hover {
+  color: var(--vermelho);
+}
+
+
+/* ---------- 13. RODAPÉ ---------- */
+.rodape {
+  background-color: var(--tinta);
+  color: var(--papel);
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 3rem;
+  font-size: 0.85rem;
+}
+
+.rodape-nome {
+  font-family: "UnifrakturMaguntia", "Times New Roman", serif;
+  font-size: 2.2rem;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.rodape p {
+  margin-bottom: 0.3rem;
+}
+
+
+/* ---------- 14. TABLET (telas até 960px) ---------- */
+@media (max-width: 960px) {
+
+  /* a capa vira uma coluna só */
+  .manchete {
+    grid-template-columns: 1fr;
+  }
+
+  .lateral {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .entrevista,
+  .habilidades {
+    grid-template-columns: 1fr;
+  }
+
+  .citacao,
+  .box-frase {
+    position: static;
+  }
+
+  /* linha do tempo passa a ficar na vertical */
+  .cronologia {
+    grid-template-columns: 1fr;
+    border-top: none;
+    border-left: 3px solid var(--tinta);
+    padding-top: 0;
+    padding-left: 1.75rem;
+    gap: 1.5rem;
+  }
+
+  .evento,
+  .evento:first-child {
+    padding: 0;
+    border-left: none;
+  }
+
+  .evento::before,
+  .evento:first-child::before {
+    top: 0.2rem;
+    left: -2.4rem;
+  }
+
+  .reportagem-destaque {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* reportagens uma embaixo da outra */
+  .reportagens {
+    grid-template-columns: 1fr;
+  }
+
+  .reportagem,
+  .reportagem:first-child {
+    padding: 1.5rem 0;
+    border-left: none;
+    border-top: 1px solid var(--linha-fina);
+  }
+
+  .reportagem:first-child {
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .lazer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .classificados {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ---------- 15. CELULAR (telas até 640px) ---------- */
+@media (max-width: 640px) {
+
+  .barra-topo-conteudo {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .ferramentas-rotulo {
+    display: none;
+  }
+
+  .cabecalho-info {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  /* o menu fica escondido até a pessoa clicar em "Cadernos" */
+  .botao-menu {
+    display: block;
+    width: 100%;
+    padding: 0.7rem;
+    font-family: "Oswald", Arial, sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--tinta);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    padding-bottom: 0.5rem;
+  }
+
+  .menu.aberto {
+    display: flex;
+  }
+
+  .menu li {
+    border-right: none;
+    border-top: 1px solid var(--linha-fina);
+  }
+
+  /* no celular o texto justificado fica com buracos, então alinha à esquerda */
+  .colunas {
+    column-count: 1;
+    text-align: left;
+  }
+
+  .moldura-foto {
+    height: 300px;
+    padding: 1rem;
+  }
+
+  .classificados {
+    grid-template-columns: 1fr;
+  }
+
+  .anuncio-grande,
+  .anuncio-contato {
+    grid-column: auto;
+  }
+}
+
+
+/* ---------- 16. IMPRESSÃO (botão "Imprimir edição") ---------- */
+@media print {
+
+  /* esconde o que não faz sentido no papel */
+  .barra-topo,
+  .botao-menu,
+  .menu,
+  .botao {
+    display: none;
+  }
+
+  body {
+    background-color: #ffffff;
+  }
+
+  .cadernos {
+    position: static;
+  }
+
+  .citacao,
+  .box-frase {
+    position: static;
+  }
+
+  .rodape {
+    background-color: #ffffff;
+    color: var(--tinta);
+    border-top: 3px solid var(--tinta);
+  }
+}
